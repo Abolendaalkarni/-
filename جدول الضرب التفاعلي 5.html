@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>اختبر نفسك في جدول الضرب</title>
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f4f7fb;--card:#ffffff;--text:#1d2a3a;--muted:#5d6b7c;
+  --primary:#2f6fed;--primary-text:#ffffff;--border:#d6dfeb;
+  --ok:#1f9d55;--ok-bg:#e1f5e9;--bad:#d64545;--bad-bg:#fde6e6;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#121821;--card:#1b2431;--text:#eaf0f8;--muted:#9fb0c4;
+    --primary:#5b8cff;--primary-text:#0d1420;--border:#2e3b4e;
+    --ok:#4cc88a;--ok-bg:#16382a;--bad:#ff7b7b;--bad-bg:#432122;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#121821;--card:#1b2431;--text:#eaf0f8;--muted:#9fb0c4;
+  --primary:#5b8cff;--primary-text:#0d1420;--border:#2e3b4e;
+  --ok:#4cc88a;--ok-bg:#16382a;--bad:#ff7b7b;--bad-bg:#432122;
+}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:radial-gradient(circle at 12% 8%,rgba(47,111,237,.20),transparent 42%),radial-gradient(circle at 88% 92%,rgba(255,150,40,.18),transparent 42%),radial-gradient(circle at 90% 15%,rgba(155,77,255,.14),transparent 38%),var(--bg);background-attachment:fixed;color:var(--text);
+  font-family:"Tajawal","Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;
+  display:flex;justify-content:center;padding:16px}
+.wrap{width:100%;max-width:480px}
+.card{background:var(--card);border:1px solid var(--border);border-top:6px solid var(--primary);border-radius:22px;padding:22px;margin-top:12px;box-shadow:0 10px 30px rgba(20,40,90,.14);border-image:none}
+h1{font-size:28px;margin:0 0 6px;text-align:center;background:linear-gradient(90deg,#2f6fed,#9b4dff,#ff7a2f);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
+.label{font-weight:700;margin:14px 0 8px}
+.chips{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.chip{padding:12px 0;border-radius:12px;border:2px solid var(--border);background:transparent;
+  color:var(--text);font:inherit;font-size:18px;font-weight:700;cursor:pointer}
+.chip.on{border-color:var(--primary);background:var(--primary);color:var(--primary-text)}
+.wide{grid-column:1/-1}
+.btn{display:block;width:100%;padding:14px;border-radius:14px;border:0;background:var(--primary);box-shadow:0 6px 16px rgba(47,111,237,.30);
+  color:var(--primary-text);font:inherit;font-size:19px;font-weight:700;cursor:pointer;margin-top:18px}
+.btn.ghost{background:transparent;color:var(--text);border:2px solid var(--border)}
+.top{display:flex;justify-content:space-between;color:var(--muted);font-weight:700}
+.bar{height:10px;background:var(--border);border-radius:99px;overflow:hidden;margin:10px 0 4px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2f6fed,#9b4dff,#ff7a2f);transition:width .3s}
+.q{font-size:52px;font-weight:800;text-align:center;margin:22px 0;direction:ltr;letter-spacing:2px;background:linear-gradient(135deg,rgba(47,111,237,.16),rgba(155,77,255,.16));border-radius:18px;padding:20px 0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opt{padding:18px 0;border-radius:14px;border:2px solid var(--border);background:transparent;
+  color:var(--text);font:inherit;font-size:26px;font-weight:700;cursor:pointer}
+.opt.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.opt.bad{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.msg{min-height:28px;text-align:center;font-weight:700;margin-top:14px;font-size:18px}
+.big{font-size:64px;text-align:center;margin:6px 0}
+.score{font-size:40px;font-weight:800;text-align:center}
+.wrong{margin:14px 0 0;padding:0;list-style:none}
+.wrong li{display:flex;justify-content:space-between;padding:10px 12px;border-radius:10px;
+  background:var(--bad-bg);margin-bottom:8px;direction:rtl}
+.wrong b{direction:ltr}
+.school{text-align:center;background:var(--primary);color:var(--primary-text);font-weight:800;font-size:16px;padding:8px 16px;border-radius:99px;width:fit-content;margin:0 auto 10px}
+.deco{text-align:center;font-size:28px;letter-spacing:8px;margin:4px 0 10px}
+.credit{text-align:center;color:var(--muted);font-size:15px;line-height:1.8;margin-top:20px;padding-top:14px;border-top:1px solid var(--border)}
+.hide{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="start" class="card">
+    <div class="school">مدرسة هشام بن عروة الابتدائية</div>
+    <div class="deco">✖️ ➕ ➗ ➖ ✨</div>
+    <h1>اختبر نفسك في جدول الضرب</h1>
+    <p class="sub">اختر الإجابة الصحيحة</p>
+    <div class="label">اختر الجدول</div>
+    <div class="chips" id="chips"></div>
+    <button class="btn" id="go">ابدأ الاختبار</button>
+    <div class="credit">إعداد الأستاذ: محمد القرني<br>العام الدراسي ١٤٤٨هـ</div>
+  </div>
+
+  <div id="quiz" class="card hide">
+    <div class="top"><span id="num"></span><span id="sc"></span></div>
+    <div class="bar"><i id="fill"></i></div>
+    <div class="q" id="q"></div>
+    <div class="opts" id="opts"></div>
+    <div class="msg" id="msg"></div>
+    <button class="btn hide" id="next">التالي</button>
+  </div>
+
+  <div id="end" class="card hide">
+    <div class="big" id="emoji"></div>
+    <div class="score" id="final"></div>
+    <p class="sub" id="verdict"></p>
+    <div id="wrongBox" class="hide">
+      <div class="label">راجع هذه الأسئلة</div>
+      <ul class="wrong" id="wrongList"></ul>
+    </div>
+    <button class="btn" id="again">اختبار جديد</button>
+    <button class="btn ghost" id="home">تغيير الجدول</button>
+  </div>
+
+</div>
+<script>
+(function(){
+  var AR="٠١٢٣٤٥٦٧٨٩";
+  function ar(n){return String(n).replace(/\d/g,function(d){return AR[d]});}
+  var TOTAL=40, selected="all";
+  var $=function(id){return document.getElementById(id)};
+
+  // chips
+  var chips=$("chips");
+  function addChip(val,text,cls){
+    var b=document.createElement("button");
+    b.className="chip"+(cls?" "+cls:"")+(val===selected?" on":"");
+    b.textContent=text;b.dataset.v=val;
+    b.onclick=function(){
+      selected=val;
+      Array.prototype.forEach.call(chips.children,function(c){c.classList.toggle("on",c.dataset.v===String(val))});
+    };
+    chips.appendChild(b);
+  }
+  for(var i=1;i<=10;i++)addChip(String(i),ar(i));
+  addChip("all","كل الجداول","wide");
+  Array.prototype.forEach.call(chips.children,function(c){c.classList.toggle("on",c.dataset.v===selected)});
+
+  var qs,idx,score,wrongs,locked;
+
+  function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a}
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=rnd(0,i);var t=a[i];a[i]=a[j];a[j]=t}return a}
+
+  // الأوزان: الجداول الصعبة (٦ و٧ و٨ و٩) أكثر، والسهلة (١ و١٠) أقل
+  var W={1:1,2:3,3:5,4:5,5:3,6:9,7:11,8:11,9:9,10:1};
+  function wpick(){
+    var tot=0,k;
+    for(k=1;k<=10;k++)tot+=W[k];
+    var r=Math.random()*tot;
+    for(k=1;k<=10;k++){r-=W[k];if(r<0)return k}
+    return 7;
+  }
+  function tensList(n){
+    {
+      var tl=[],ts={},tg=0;
+      while(tl.length<n&&tg<2000){
+        tg++;
+        var d1=rnd(2,9)*Math.pow(10,rnd(1,2));
+        var d2=rnd(2,9)*Math.pow(10,rnd(1,3));
+        var tk=Math.min(d1,d2)+"x"+Math.max(d1,d2);
+        if(ts[tk]&&tg<1500)continue;
+        ts[tk]=1;
+        tl.push({a:d1,b:d2,ans:d1*d2});
+      }
+      return tl;
+    }
+  }
+  function build(){
+    var list=[],seen={};
+    var guard=0;
+    var N=selected==="all"?40:TOTAL;
+    while(list.length<N&&guard<3000){
+      guard++;
+      var a=selected==="all"?wpick():parseInt(selected,10);
+      var b=wpick();
+      if(Math.random()<0.5&&selected==="all"){var t=a;a=b;b=t}
+      var key=Math.min(a,b)+"x"+Math.max(a,b);
+      if(seen[key]&&guard<2000)continue;
+      if(seen[key]&&Math.random()<0.5)continue;
+      seen[key]=1;
+      list.push({a:a,b:b,ans:a*b});
+    }
+    function rank(l){
+      l.sort(function(x,y){return x.ans-y.ans});
+      l.forEach(function(q,i){q.k=i/(l.length-1||1)+(Math.random()-0.5)*0.2});
+      return l;
+    }
+    list=rank(list);
+    if(selected==="all")list=list.concat(rank(tensList(40)));
+    list.sort(function(x,y){return x.k-y.k});
+    return list;
+  }
+
+  function options(ans,a,b){
+    var set={};set[ans]=1;
+    var cands;
+    if(a%10===0&&b%10===0){
+      var sa=a,sb=b,z=1;
+      while(sa%10===0){sa/=10;z*=10}
+      while(sb%10===0){sb/=10;z*=10}
+      cands=[ans*10,ans/10,(sa+1)*sb*z,(sa-1)*sb*z,sa*(sb+1)*z,sa*(sb-1)*z,ans*100,ans/100];
+    }else{
+      cands=[ (a+1)*b, (a-1)*b, a*(b+1), a*(b-1), ans+10, ans-10, ans+2, ans-2 ];
+    }
+    cands=shuffle(cands);
+    var out=[ans];
+    for(var i=0;i<cands.length&&out.length<4;i++){
+      var c=cands[i];
+      if(c>0&&!set[c]){set[c]=1;out.push(c)}
+    }
+    while(out.length<4){var r=rnd(1,100);if(!set[r]){set[r]=1;out.push(r)}}
+    return shuffle(out);
+  }
+
+  function show(id){["start","quiz","end"].forEach(function(s){$(s).classList.toggle("hide",s!==id)});window.scrollTo(0,0)}
+
+  function start(){
+    TOTAL=selected==="all"?80:40;qs=build();idx=0;score=0;wrongs=[];
+    show("quiz");render();
+  }
+
+  function render(){
+    locked=false;
+    var q=qs[idx];
+    $("num").textContent="السؤال "+ar(idx+1)+" من "+ar(TOTAL);
+    $("sc").textContent="الدرجة: "+ar(score);
+    $("fill").style.width=(idx/TOTAL*100)+"%";
+    $("q").textContent=ar(q.a)+" × "+ar(q.b)+" = ؟";
+    $("msg").textContent="";
+    $("next").classList.add("hide");
+    var box=$("opts");box.innerHTML="";
+    options(q.ans,q.a,q.b).forEach(function(v){
+      var b=document.createElement("button");
+      b.className="opt";b.textContent=ar(v);b.dataset.v=v;
+      b.onclick=function(){pick(b,v)};
+      box.appendChild(b);
+    });
+  }
+
+  function pick(btn,v){
+    if(locked)return;locked=true;
+    var q=qs[idx];
+    var all=$("opts").children;
+    if(v===q.ans){
+      score++;btn.classList.add("ok");
+      $("msg").textContent="أحسنت! إجابة صحيحة 🎉";
+      $("msg").style.color="var(--ok)";
+    }else{
+      btn.classList.add("bad");
+      Array.prototype.forEach.call(all,function(o){if(parseInt(o.dataset.v,10)===q.ans)o.classList.add("ok")});
+      $("msg").textContent="الجواب الصحيح: "+ar(q.ans);
+      $("msg").style.color="var(--bad)";
+      wrongs.push(q);
+    }
+    $("sc").textContent="الدرجة: "+ar(score);
+    $("fill").style.width=((idx+1)/TOTAL*100)+"%";
+    $("next").textContent=idx===TOTAL-1?"عرض النتيجة":"التالي";
+    $("next").classList.remove("hide");
+  }
+
+  function finish(){
+    show("end");
+    $("final").textContent=ar(score)+" من "+ar(TOTAL);
+    var e,v;
+    var pct=score/TOTAL;
+    if(score===TOTAL){e="🏆";v="ممتاز! درجة كاملة، أنت بطل الضرب!"}
+    else if(pct>=0.8){e="🌟";v="رائع جداً! استمر هكذا."}
+    else if(pct>=0.6){e="👍";v="جيد! قليل من التدريب وتصبح ممتازاً."}
+    else{e="💪";v="لا بأس، حاول مرة أخرى وراجع الجدول."}
+    $("emoji").textContent=e;$("verdict").textContent=v;
+    var list=$("wrongList");list.innerHTML="";
+    wrongs.forEach(function(q){
+      var li=document.createElement("li");
+      var l=document.createElement("b");l.textContent=ar(q.a)+" × "+ar(q.b);
+      var r=document.createElement("span");r.textContent="= "+ar(q.ans);
+      li.appendChild(l);li.appendChild(r);list.appendChild(li);
+    });
+    $("wrongBox").classList.toggle("hide",wrongs.length===0);
+  }
+
+  $("go").onclick=start;
+  $("again").onclick=start;
+  $("home").onclick=function(){show("start")};
+  $("next").onclick=function(){idx++;if(idx>=TOTAL)finish();else render()};
+})();
+</script>
+</body>
+</html>
