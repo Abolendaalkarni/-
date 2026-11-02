@@ -10,8 +10,8 @@
 <meta property="og:title" content="اختبر نفسك في جدول الضرب">
 <meta property="og:description" content="مدرسة هشام بن عروة الابتدائية • إعداد الأستاذ محمد القرني">
 <meta property="og:image" content="https://abolendaalkarni.github.io/-/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
 <style>
@@ -19,31 +19,31 @@
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
-  --bg:#f4f7fb;--card:#ffffff;--text:#1d2a3a;--muted:#5d6b7c;
-  --primary:#2f6fed;--primary-text:#ffffff;--border:#d6dfeb;
+  --bg:#f7faf8;--card:#ffffff;--text:#1f2c25;--muted:#66766d;
+  --primary:#1b7a4b;--primary-text:#ffffff;--border:#d9e6dd;
   --ok:#1f9d55;--ok-bg:#e1f5e9;--bad:#d64545;--bad-bg:#fde6e6;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     color-scheme:dark;
-    --bg:#121821;--card:#1b2431;--text:#eaf0f8;--muted:#9fb0c4;
-    --primary:#5b8cff;--primary-text:#0d1420;--border:#2e3b4e;
+    --bg:#0f1a14;--card:#17241c;--text:#eaf5ee;--muted:#a9bdb1;
+    --primary:#3fbf84;--primary-text:#0a1a10;--border:#2b3d33;
     --ok:#4cc88a;--ok-bg:#16382a;--bad:#ff7b7b;--bad-bg:#432122;
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
-  --bg:#121821;--card:#1b2431;--text:#eaf0f8;--muted:#9fb0c4;
-  --primary:#5b8cff;--primary-text:#0d1420;--border:#2e3b4e;
+  --bg:#0f1a14;--card:#17241c;--text:#eaf5ee;--muted:#a9bdb1;
+  --primary:#3fbf84;--primary-text:#0a1a10;--border:#2b3d33;
   --ok:#4cc88a;--ok-bg:#16382a;--bad:#ff7b7b;--bad-bg:#432122;
 }
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;min-height:100%;background:radial-gradient(circle at 12% 8%,rgba(47,111,237,.20),transparent 42%),radial-gradient(circle at 88% 92%,rgba(255,150,40,.18),transparent 42%),radial-gradient(circle at 90% 15%,rgba(155,77,255,.14),transparent 38%),var(--bg);background-attachment:fixed;color:var(--text);
+body{margin:0;min-height:100%;background:radial-gradient(circle at 12% 8%,rgba(27,122,75,.18),transparent 42%),radial-gradient(circle at 88% 92%,rgba(245,183,0,.22),transparent 42%),radial-gradient(circle at 90% 15%,rgba(30,58,138,.16),transparent 38%),var(--bg);background-attachment:fixed;color:var(--text);
   font-family:"Tajawal","Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;
   display:flex;justify-content:center;padding:16px}
 .wrap{width:100%;max-width:480px}
-.card{background:var(--card);border:1px solid var(--border);border-top:6px solid var(--primary);border-radius:22px;padding:22px;margin-top:12px;box-shadow:0 10px 30px rgba(20,40,90,.14);border-image:none}
-h1{font-size:28px;margin:0 0 6px;text-align:center;background:linear-gradient(90deg,#2f6fed,#9b4dff,#ff7a2f);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.card{background:var(--card);border:1px solid var(--border);border-top:6px solid var(--primary);border-radius:22px;padding:22px;margin-top:12px;box-shadow:0 10px 30px rgba(20,70,45,.16);border-image:none}
+h1{font-size:28px;margin:0 0 6px;text-align:center;background:linear-gradient(90deg,#1b7a4b,#1e3a8a,#f5b700);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
 .label{font-weight:700;margin:14px 0 8px}
 .chips{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
@@ -51,13 +51,13 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
   color:var(--text);font:inherit;font-size:18px;font-weight:700;cursor:pointer}
 .chip.on{border-color:var(--primary);background:var(--primary);color:var(--primary-text)}
 .wide{grid-column:1/-1}
-.btn{display:block;width:100%;padding:14px;border-radius:14px;border:0;background:var(--primary);box-shadow:0 6px 16px rgba(47,111,237,.30);
+.btn{display:block;width:100%;padding:14px;border-radius:14px;border:0;background:var(--primary);box-shadow:0 6px 16px rgba(27,122,75,.32);
   color:var(--primary-text);font:inherit;font-size:19px;font-weight:700;cursor:pointer;margin-top:18px}
 .btn.ghost{background:transparent;color:var(--text);border:2px solid var(--border)}
 .top{display:flex;justify-content:space-between;color:var(--muted);font-weight:700}
 .bar{height:10px;background:var(--border);border-radius:99px;overflow:hidden;margin:10px 0 4px}
-.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2f6fed,#9b4dff,#ff7a2f);transition:width .3s}
-.q{font-size:52px;font-weight:800;text-align:center;margin:22px 0;direction:ltr;letter-spacing:2px;background:linear-gradient(135deg,rgba(47,111,237,.16),rgba(155,77,255,.16));border-radius:18px;padding:20px 0}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1b7a4b,#1e3a8a,#f5b700);transition:width .3s}
+.q{font-size:52px;font-weight:800;text-align:center;margin:22px 0;direction:ltr;letter-spacing:2px;unicode-bidi:bidi-override;background:linear-gradient(135deg,rgba(27,122,75,.14),rgba(245,183,0,.22));border-radius:18px;padding:20px 0}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .opt{padding:18px 0;border-radius:14px;border:2px solid var(--border);background:transparent;
   color:var(--text);font:inherit;font-size:26px;font-weight:700;cursor:pointer}
@@ -68,11 +68,20 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
 .score{font-size:40px;font-weight:800;text-align:center}
 .wrong{margin:14px 0 0;padding:0;list-style:none}
 .wrong li{display:flex;justify-content:space-between;padding:10px 12px;border-radius:10px;
-  background:var(--bad-bg);margin-bottom:8px;direction:rtl}
-.wrong b{direction:ltr}
-.school{text-align:center;background:var(--primary);color:var(--primary-text);font-weight:800;font-size:16px;padding:8px 16px;border-radius:99px;width:fit-content;margin:0 auto 10px}
+  background:var(--bad-bg);margin-bottom:8px;direction:ltr;font-size:20px}
+.wrong b,.wrong span{direction:ltr;unicode-bidi:bidi-override}
+.school{text-align:center;background:linear-gradient(90deg,#1b7a4b,#1e3a8a);color:#fff;font-weight:800;font-size:16px;padding:8px 16px;border-radius:99px;width:fit-content;margin:0 auto 10px}
 .deco{text-align:center;font-size:28px;letter-spacing:8px;margin:4px 0 10px}
 .credit{text-align:center;color:var(--muted);font-size:15px;line-height:1.8;margin-top:20px;padding-top:14px;border-top:1px solid var(--border)}
+.chips.c4{grid-template-columns:repeat(4,1fr)}
+.btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.note{background:rgba(214,69,69,.08);border:1px solid rgba(214,69,69,.35);border-radius:16px;padding:12px 14px;margin:0 0 6px}
+.note-t{font-weight:800;color:var(--bad);margin-bottom:6px;font-size:18px}
+.note-i{font-size:16px;line-height:1.9;margin:4px 0}
+.hint{min-height:22px;text-align:center;color:var(--bad);font-weight:700;margin-top:12px}
+.dua{text-align:center;color:var(--muted);font-weight:700;margin:18px 0 8px;font-size:17px}
+.chips.c4 .chip.on{background:#1b7a4b;border-color:#1b7a4b;color:#fff}
+.ltr{unicode-bidi:bidi-override;direction:ltr;display:inline-block}
 .hide{display:none}
 </style>
 </head>
@@ -84,8 +93,22 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
     <div class="deco">✖️ ➕ ➗ ➖ ✨</div>
     <h1>اختبر نفسك في جدول الضرب</h1>
     <p class="sub">اختر الإجابة الصحيحة</p>
-    <div class="label">اختر الجدول</div>
-    <div class="chips" id="chips"></div>
+
+    <div class="note">
+      <div class="note-t">تذكّر:</div>
+      <div class="note-i">🔴 أي عدد تضربه في الصفر يكون الناتج صفراً</div>
+      <div class="note-i">🔴 أي عدد نضربه في الواحد لا يغيّر العدد المضروب (العنصر المحايد)</div>
+      <div class="note-i">🔴 الضرب في مضاعفات العشرة: نضع الأصفار في الإجابة ونضرب الأعداد المتبقية</div>
+    </div>
+
+    <div class="label">القسم الأول: جدول الضرب (اختر جدولاً أو أكثر)</div>
+    <div class="chips c4" id="tchips"></div>
+    <div class="chips" style="margin-top:8px"><button class="chip wide" id="allT"></button></div>
+
+    <div class="label">القسم الثاني: الضرب في ١٠ ومضاعفاتها</div>
+    <div class="chips"><button class="chip wide" id="tensChip">الضرب في ١٠ ومضاعفاتها (<span class="ltr">٦٠ × ٨٠</span>)</button></div>
+
+    <div class="hint" id="hint"></div>
     <button class="btn" id="go">ابدأ الاختبار</button>
     <div class="credit">إعداد الأستاذ: محمد القرني<br>العام الدراسي ١٤٤٨هـ</div>
   </div>
@@ -108,114 +131,153 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
       <ul class="wrong" id="wrongList"></ul>
     </div>
     <button class="btn" id="again">اختبار جديد</button>
-    <button class="btn ghost" id="home">تغيير الجدول</button>
+    <button class="btn ghost" id="home">تغيير الاختيار</button>
   </div>
+
+  <div class="dua">لا تنسونا من صالح دعواتكم</div>
 
 </div>
 <script>
 (function(){
   var AR="٠١٢٣٤٥٦٧٨٩";
   function ar(n){return String(n).replace(/\d/g,function(d){return AR[d]});}
-  var TOTAL=40, selected="all";
   var $=function(id){return document.getElementById(id)};
-
-  // chips
-  var chips=$("chips");
-  function addChip(val,text,cls){
-    var b=document.createElement("button");
-    b.className="chip"+(cls?" "+cls:"")+(val===selected?" on":"");
-    b.textContent=text;b.dataset.v=val;
-    b.onclick=function(){
-      selected=val;
-      Array.prototype.forEach.call(chips.children,function(c){c.classList.toggle("on",c.dataset.v===String(val))});
-    };
-    chips.appendChild(b);
-  }
-  for(var i=1;i<=10;i++)addChip(String(i),ar(i));
-  addChip("all","كل الجداول","wide");
-  Array.prototype.forEach.call(chips.children,function(c){c.classList.toggle("on",c.dataset.v===selected)});
-
-  var qs,idx,score,wrongs,locked;
-
   function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a}
   function shuffle(a){for(var i=a.length-1;i>0;i--){var j=rnd(0,i);var t=a[i];a[i]=a[j];a[j]=t}return a}
 
-  // الأوزان: الجداول الصعبة (٦ و٧ و٨ و٩) أكثر، والسهلة (١ و١٠) أقل
-  var W={1:1,2:3,3:5,4:5,5:3,6:9,7:11,8:11,9:9,10:1};
-  function wpick(){
-    var tot=0,k;
-    for(k=1;k<=10;k++)tot+=W[k];
-    var r=Math.random()*tot;
-    for(k=1;k<=10;k++){r-=W[k];if(r<0)return k}
-    return 7;
+  var sel={},tens=false,i;
+  for(i=2;i<=9;i++)sel[i]=true;
+  var TOTAL=0,qs,idx,score,wrongs,locked;
+
+  function countSel(){var c=0;for(var k=2;k<=9;k++)if(sel[k])c++;return c}
+
+  // ---------- شاشة الاختيار ----------
+  var tc=$("tchips");
+  for(i=2;i<=9;i++){(function(n){
+    var b=document.createElement("button");
+    b.className="chip";b.textContent=ar(n);b.dataset.n=n;
+    b.onclick=function(){sel[n]=!sel[n];refresh()};
+    tc.appendChild(b);
+  })(i)}
+  $("allT").onclick=function(){var all=countSel()===8;for(var k=2;k<=9;k++)sel[k]=!all;refresh()};
+  $("tensChip").onclick=function(){tens=!tens;refresh()};
+
+  function refresh(){
+    Array.prototype.forEach.call(tc.children,function(c){c.classList.toggle("on",!!sel[c.dataset.n])});
+    var c=countSel();
+    $("allT").textContent=c===8?"إلغاء تحديد كل الجداول":"تحديد كل الجداول (٢ إلى ٩)";
+    $("allT").classList.toggle("on",c===8);
+    $("tensChip").classList.toggle("on",tens);
+    var ok=c>0||tens;
+    $("go").disabled=!ok;
+    $("hint").textContent=ok?"":"اختر جدولاً واحداً على الأقل، أو الضرب في ١٠";
   }
-  function tensList(n){
-    {
-      var tl=[],ts={},tg=0;
-      while(tl.length<n&&tg<2000){
-        tg++;
-        var d1=rnd(2,9)*Math.pow(10,rnd(1,2));
-        var d2=rnd(2,9)*Math.pow(10,rnd(1,3));
-        var tk=Math.min(d1,d2)+"x"+Math.max(d1,d2);
-        if(ts[tk]&&tg<1500)continue;
-        ts[tk]=1;
-        tl.push({a:d1,b:d2,ans:d1*d2});
+  refresh();
+
+  // ---------- توليد الأسئلة ----------
+  function tablePool(){
+    var S=[],k;
+    for(k=2;k<=9;k++)if(sel[k])S.push(k);
+    var seen={},pool=[];
+    S.forEach(function(a){
+      for(var b=2;b<=9;b++){
+        [[a,b],[b,a]].forEach(function(p){
+          var key=p[0]+"x"+p[1];
+          if(seen[key])return;seen[key]=1;
+          var pr=p[0]*p[1];
+          pool.push({k:"d",a:p[0],b:p[1],p:pr,ans:pr});
+          if(Math.random()<0.5)pool.push({k:"m",a:p[0],b:p[1],p:pr,ans:p[1]});
+        });
       }
-      return tl;
-    }
+    });
+    return pool;
   }
-  function build(){
-    var list=[],seen={};
-    var guard=0;
-    var N=selected==="all"?40:TOTAL;
-    while(list.length<N&&guard<3000){
-      guard++;
-      var a=selected==="all"?wpick():parseInt(selected,10);
-      var b=wpick();
-      if(Math.random()<0.5&&selected==="all"){var t=a;a=b;b=t}
+
+  // اختيار بلا تكرار: كل حقيقة (مثل ٤×٧) تظهر مرة أولاً، ثم مرتين، ثم ثلاثاً عند الحاجة فقط
+  function pick(pool,n){
+    shuffle(pool);
+    var out=[],cnt={};
+    for(var pass=1;pass<=3&&out.length<n;pass++){
+      for(var j=0;j<pool.length&&out.length<n;j++){
+        var it=pool[j];if(it.u)continue;
+        var key=Math.min(it.a,it.b)+"x"+Math.max(it.a,it.b);
+        if((cnt[key]||0)<pass){cnt[key]=(cnt[key]||0)+1;it.u=1;out.push(it)}
+      }
+    }
+    return out;
+  }
+
+  function tensList(n){
+    var out=[],seen={},g=0;
+    while(out.length<n&&g<4000){
+      g++;
+      var r=Math.random(),a,b;
+      if(r<0.2){a=rnd(2,9);b=Math.pow(10,rnd(1,2));}
+      else if(r<0.45){a=rnd(2,9);b=rnd(2,9)*Math.pow(10,rnd(1,2));}
+      else{a=rnd(2,9)*Math.pow(10,rnd(1,2));b=rnd(2,9)*Math.pow(10,rnd(1,2));}
+      if(Math.random()<0.5){var t=a;a=b;b=t}
       var key=Math.min(a,b)+"x"+Math.max(a,b);
-      if(seen[key]&&guard<2000)continue;
-      if(seen[key]&&Math.random()<0.5)continue;
-      seen[key]=1;
-      list.push({a:a,b:b,ans:a*b});
+      if(seen[key])continue;seen[key]=1;
+      out.push({k:"h",a:a,b:b,p:a*b,ans:a*b});
     }
-    function rank(l){
-      l.sort(function(x,y){return x.ans-y.ans});
-      l.forEach(function(q,i){q.k=i/(l.length-1||1)+(Math.random()-0.5)*0.2});
-      return l;
-    }
-    list=rank(list);
-    if(selected==="all")list=list.concat(rank(tensList(40)));
-    list.sort(function(x,y){return x.k-y.k});
+    return out;
+  }
+
+  // تدرّج: يبدأ بالأصغر ويكبر شيئاً فشيئاً مع خلط خفيف
+  function rank(l){
+    l.sort(function(x,y){return x.p-y.p});
+    l.forEach(function(q,i){q.o=i/(l.length-1||1)+(Math.random()-0.5)*0.2});
+    return l;
+  }
+
+  function build(){
+    var list=[];
+    if(countSel()>0)list=list.concat(rank(pick(tablePool(),40)));
+    if(tens)list=list.concat(rank(tensList(40)));
+    list.sort(function(x,y){return x.o-y.o});
     return list;
   }
 
-  function options(ans,a,b){
-    var set={};set[ans]=1;
-    var cands;
-    if(a%10===0&&b%10===0){
-      var sa=a,sb=b,z=1;
+  function options(q){
+    var ans=q.ans,set={},out=[ans],c,x;
+    set[ans]=1;
+    if(q.k==="h"){
+      var sa=q.a,sb=q.b,z=1;
       while(sa%10===0){sa/=10;z*=10}
       while(sb%10===0){sb/=10;z*=10}
-      cands=[ans*10,ans/10,(sa+1)*sb*z,(sa-1)*sb*z,sa*(sb+1)*z,sa*(sb-1)*z,ans*100,ans/100];
+      c=[ans*10,ans/10,(sa+1)*sb*z,(sa-1)*sb*z,sa*(sb+1)*z,sa*(sb-1)*z,ans*100,ans/100];
+    }else if(q.k==="m"){
+      c=[ans+1,ans-1,ans+2,ans-2,ans+3,ans-3];
     }else{
-      cands=[ (a+1)*b, (a-1)*b, a*(b+1), a*(b-1), ans+10, ans-10, ans+2, ans-2 ];
+      var a=q.a,b=q.b;
+      var sw=parseInt(String(ans).split("").reverse().join(""),10);
+      c=[(a+1)*b,(a-1)*b,a*(b+1),a*(b-1),sw,ans+10,ans-10,ans+1,ans-1];
     }
-    cands=shuffle(cands);
-    var out=[ans];
-    for(var i=0;i<cands.length&&out.length<4;i++){
-      var c=cands[i];
-      if(c>0&&!set[c]){set[c]=1;out.push(c)}
+    shuffle(c);
+    for(var i=0;i<c.length&&out.length<4;i++){
+      x=c[i];
+      var okRange=q.k==="m"?(x>=2&&x<=10):(x>0);
+      if(Number.isInteger(x)&&okRange&&!set[x]){set[x]=1;out.push(x)}
     }
-    while(out.length<4){var r=rnd(1,100);if(!set[r]){set[r]=1;out.push(r)}}
+    var g=0;
+    while(out.length<4&&g<200){
+      g++;
+      x=q.k==="m"?rnd(2,10):(q.k==="h"?ans+rnd(-9,9)*Math.max(10,ans/10):ans+rnd(-12,12));
+      if(x>0&&!set[x]&&Number.isInteger(x)){set[x]=1;out.push(x)}
+    }
     return shuffle(out);
   }
 
+  // ---------- سير الاختبار ----------
   function show(id){["start","quiz","end"].forEach(function(s){$(s).classList.toggle("hide",s!==id)});window.scrollTo(0,0)}
 
   function start(){
-    TOTAL=selected==="all"?80:40;qs=build();idx=0;score=0;wrongs=[];
+    qs=build();TOTAL=qs.length;idx=0;score=0;wrongs=[];
     show("quiz");render();
+  }
+
+  function qText(q){
+    return q.k==="m"?ar(q.a)+" × ? = "+ar(q.p):ar(q.a)+" × "+ar(q.b)+" = ?";
   }
 
   function render(){
@@ -224,19 +286,21 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
     $("num").textContent="السؤال "+ar(idx+1)+" من "+ar(TOTAL);
     $("sc").textContent="الدرجة: "+ar(score);
     $("fill").style.width=(idx/TOTAL*100)+"%";
-    $("q").textContent=ar(q.a)+" × "+ar(q.b)+" = ؟";
+    var t=qText(q);
+    $("q").textContent=t;
+    $("q").style.fontSize=t.length>13?"32px":t.length>10?"40px":"52px";
     $("msg").textContent="";
     $("next").classList.add("hide");
     var box=$("opts");box.innerHTML="";
-    options(q.ans,q.a,q.b).forEach(function(v){
+    options(q).forEach(function(v){
       var b=document.createElement("button");
       b.className="opt";b.textContent=ar(v);b.dataset.v=v;
-      b.onclick=function(){pick(b,v)};
+      b.onclick=function(){pickAns(b,v)};
       box.appendChild(b);
     });
   }
 
-  function pick(btn,v){
+  function pickAns(btn,v){
     if(locked)return;locked=true;
     var q=qs[idx];
     var all=$("opts").children;
@@ -260,8 +324,7 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
   function finish(){
     show("end");
     $("final").textContent=ar(score)+" من "+ar(TOTAL);
-    var e,v;
-    var pct=score/TOTAL;
+    var e,v,pct=score/TOTAL;
     if(score===TOTAL){e="🏆";v="ممتاز! درجة كاملة، أنت بطل الضرب!"}
     else if(pct>=0.8){e="🌟";v="رائع جداً! استمر هكذا."}
     else if(pct>=0.6){e="👍";v="جيد! قليل من التدريب وتصبح ممتازاً."}
@@ -271,7 +334,7 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
     wrongs.forEach(function(q){
       var li=document.createElement("li");
       var l=document.createElement("b");l.textContent=ar(q.a)+" × "+ar(q.b);
-      var r=document.createElement("span");r.textContent="= "+ar(q.ans);
+      var r=document.createElement("span");r.textContent="= "+ar(q.p);
       li.appendChild(l);li.appendChild(r);list.appendChild(li);
     });
     $("wrongBox").classList.toggle("hide",wrongs.length===0);
