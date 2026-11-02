@@ -1,350 +1,558 @@
-<!DOCTYPE html>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>اختبر نفسك في جدول الضرب</title>
-<meta name="description" content="اختبار تفاعلي في جدول الضرب لطلاب مدرسة هشام بن عروة الابتدائية. إعداد الأستاذ محمد القرني.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ar_SA">
-<meta property="og:title" content="اختبر نفسك في جدول الضرب">
-<meta property="og:description" content="مدرسة هشام بن عروة الابتدائية • إعداد الأستاذ محمد القرني">
-<meta property="og:image" content="https://abolendaalkarni.github.io/-/og.jpg">
-<meta property="og:image:width" content="1280">
-<meta property="og:image:height" content="640">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
-<style>
-:root{
-  box-sizing:border-box;
-  padding-top:env(safe-area-inset-top,0px);
-  padding-bottom:env(safe-area-inset-bottom,0px);
-  --bg:#f7faf8;--card:#ffffff;--text:#1f2c25;--muted:#66766d;
-  --primary:#1b7a4b;--primary-text:#ffffff;--border:#d9e6dd;
-  --ok:#1f9d55;--ok-bg:#e1f5e9;--bad:#d64545;--bad-bg:#fde6e6;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    color-scheme:dark;
-    --bg:#0f1a14;--card:#17241c;--text:#eaf5ee;--muted:#a9bdb1;
-    --primary:#3fbf84;--primary-text:#0a1a10;--border:#2b3d33;
-    --ok:#4cc88a;--ok-bg:#16382a;--bad:#ff7b7b;--bad-bg:#432122;
-  }
-}
-:root[data-theme="dark"]{
-  color-scheme:dark;
-  --bg:#0f1a14;--card:#17241c;--text:#eaf5ee;--muted:#a9bdb1;
-  --primary:#3fbf84;--primary-text:#0a1a10;--border:#2b3d33;
-  --ok:#4cc88a;--ok-bg:#16382a;--bad:#ff7b7b;--bad-bg:#432122;
-}
-html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;min-height:100%;background:radial-gradient(circle at 12% 8%,rgba(27,122,75,.18),transparent 42%),radial-gradient(circle at 88% 92%,rgba(245,183,0,.22),transparent 42%),radial-gradient(circle at 90% 15%,rgba(30,58,138,.16),transparent 38%),var(--bg);background-attachment:fixed;color:var(--text);
-  font-family:"Tajawal","Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;
-  display:flex;justify-content:center;padding:16px}
-.wrap{width:100%;max-width:480px}
-.card{background:var(--card);border:1px solid var(--border);border-top:6px solid var(--primary);border-radius:22px;padding:22px;margin-top:12px;box-shadow:0 10px 30px rgba(20,70,45,.16);border-image:none}
-h1{font-size:28px;margin:0 0 6px;text-align:center;background:linear-gradient(90deg,#1b7a4b,#1e3a8a,#f5b700);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
-p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
-.label{font-weight:700;margin:14px 0 8px}
-.chips{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.chip{padding:12px 0;border-radius:12px;border:2px solid var(--border);background:transparent;
-  color:var(--text);font:inherit;font-size:18px;font-weight:700;cursor:pointer}
-.chip.on{border-color:var(--primary);background:var(--primary);color:var(--primary-text)}
-.wide{grid-column:1/-1}
-.btn{display:block;width:100%;padding:14px;border-radius:14px;border:0;background:var(--primary);box-shadow:0 6px 16px rgba(27,122,75,.32);
-  color:var(--primary-text);font:inherit;font-size:19px;font-weight:700;cursor:pointer;margin-top:18px}
-.btn.ghost{background:transparent;color:var(--text);border:2px solid var(--border)}
-.top{display:flex;justify-content:space-between;color:var(--muted);font-weight:700}
-.bar{height:10px;background:var(--border);border-radius:99px;overflow:hidden;margin:10px 0 4px}
-.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1b7a4b,#1e3a8a,#f5b700);transition:width .3s}
-.q{font-size:52px;font-weight:800;text-align:center;margin:22px 0;direction:ltr;letter-spacing:2px;unicode-bidi:bidi-override;background:linear-gradient(135deg,rgba(27,122,75,.14),rgba(245,183,0,.22));border-radius:18px;padding:20px 0}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.opt{padding:18px 0;border-radius:14px;border:2px solid var(--border);background:transparent;
-  color:var(--text);font:inherit;font-size:26px;font-weight:700;cursor:pointer}
-.opt.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
-.opt.bad{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
-.msg{min-height:28px;text-align:center;font-weight:700;margin-top:14px;font-size:18px}
-.big{font-size:64px;text-align:center;margin:6px 0}
-.score{font-size:40px;font-weight:800;text-align:center}
-.wrong{margin:14px 0 0;padding:0;list-style:none}
-.wrong li{display:flex;justify-content:space-between;padding:10px 12px;border-radius:10px;
-  background:var(--bad-bg);margin-bottom:8px;direction:ltr;font-size:20px}
-.wrong b,.wrong span{direction:ltr;unicode-bidi:bidi-override}
-.school{text-align:center;background:linear-gradient(90deg,#1b7a4b,#1e3a8a);color:#fff;font-weight:800;font-size:16px;padding:8px 16px;border-radius:99px;width:fit-content;margin:0 auto 10px}
-.deco{text-align:center;font-size:28px;letter-spacing:8px;margin:4px 0 10px}
-.credit{text-align:center;color:var(--muted);font-size:15px;line-height:1.8;margin-top:20px;padding-top:14px;border-top:1px solid var(--border)}
-.chips.c4{grid-template-columns:repeat(4,1fr)}
-.btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
-.note{background:rgba(214,69,69,.08);border:1px solid rgba(214,69,69,.35);border-radius:16px;padding:12px 14px;margin:0 0 6px}
-.note-t{font-weight:800;color:var(--bad);margin-bottom:6px;font-size:18px}
-.note-i{font-size:16px;line-height:1.9;margin:4px 0}
-.hint{min-height:22px;text-align:center;color:var(--bad);font-weight:700;margin-top:12px}
-.dua{text-align:center;color:var(--muted);font-weight:700;margin:18px 0 8px;font-size:17px}
-.chips.c4 .chip.on{background:#1b7a4b;border-color:#1b7a4b;color:#fff}
-.ltr{unicode-bidi:bidi-override;direction:ltr;display:inline-block}
-.hide{display:none}
-</style>
 </head>
 <body>
-<div class="wrap">
+<title>اختبر نفسك في جدول الضرب</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+  /* Layout: one centred notebook-page column; graph-paper ground (light) or chalkboard (dark); chunky ink outlines with hard offset shadows. */
+  :root {
+    --paper: #eef3f9;
+    --surface: #ffffff;
+    --ink: #14284b;
+    --muted: #4d5c7a;
+    --grid: rgba(42, 91, 215, 0.10);
+    --accent: #f5b91e;
+    --on-accent: #14284b;
+    --good: #17794f;
+    --good-bg: #dff3e8;
+    --bad: #c62f39;
+    --bad-bg: #fde4e5;
+    --focus: #2a5bd7;
+    --shadow: #14284b;
+    --display: 'Reem Kufi', 'Noto Kufi Arabic', Tahoma, sans-serif;
+    --body: 'Tajawal', 'Noto Sans Arabic', Tahoma, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12302b;
+      --surface: #1a3d36;
+      --ink: #eef2ee;
+      --muted: #a9bfb6;
+      --grid: rgba(238, 242, 238, 0.07);
+      --accent: #f5c542;
+      --on-accent: #16312b;
+      --good: #6fdca6;
+      --good-bg: #1f5a46;
+      --bad: #ff8a90;
+      --bad-bg: #5a2a30;
+      --focus: #8fd0ff;
+      --shadow: rgba(0, 0, 0, 0.55);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12302b;
+    --surface: #1a3d36;
+    --ink: #eef2ee;
+    --muted: #a9bfb6;
+    --grid: rgba(238, 242, 238, 0.07);
+    --accent: #f5c542;
+    --on-accent: #16312b;
+    --good: #6fdca6;
+    --good-bg: #1f5a46;
+    --bad: #ff8a90;
+    --bad-bg: #5a2a30;
+    --focus: #8fd0ff;
+    --shadow: rgba(0, 0, 0, 0.55);
+    color-scheme: dark;
+  }
 
-  <div id="start" class="card">
-    <div class="school">مدرسة هشام بن عروة الابتدائية</div>
-    <div class="deco">✖️ ➕ ➗ ➖ ✨</div>
+  * { box-sizing: border-box; }
+  body {
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.7;
+    direction: rtl;
+    text-align: start;
+    padding-block: 24px 40px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  #app { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+  h1, h2, h3, p { margin: 0; }
+  h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.35; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+  /* Header */
+  .top { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; padding-top: 6px; }
+  .ops { display: flex; gap: 8px; }
+  .ops span {
+    width: 44px; height: 44px; display: grid; place-items: center;
+    font-family: var(--display); font-weight: 700; font-size: 1.6rem; line-height: 1;
+    border: 2px solid var(--ink); border-radius: 12px; background: var(--surface);
+  }
+  .ops span:first-child { background: var(--accent); color: var(--on-accent); }
+  .school { font-weight: 700; color: var(--muted); letter-spacing: 0.02em; }
+  h1 { font-size: clamp(1.9rem, 7vw, 2.9rem); font-weight: 700; }
+  .sub { font-size: 1.15rem; color: var(--muted); }
+
+  /* Reminder note */
+  .note {
+    background: var(--surface); border: 2px dashed var(--ink); border-radius: 16px;
+    padding: 18px 20px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .note h2 { font-size: 1.35rem; }
+  .note ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .note li { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; align-items: start; }
+  .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--bad); margin-top: 0.5em; }
+  .note li > div { min-width: 0; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+  .ex {
+    direction: ltr; unicode-bidi: isolate; font-family: var(--display); font-weight: 500;
+    font-size: 0.95rem; background: var(--paper); border: 1px solid var(--muted);
+    border-radius: 8px; padding: 0 10px; color: var(--ink);
+  }
+
+  /* Panels */
+  .panel {
+    background: var(--surface); border: 2px solid var(--ink); border-radius: 18px;
+    box-shadow: 6px 6px 0 var(--shadow); padding: 22px 20px; display: flex; flex-direction: column; gap: 22px;
+  }
+  .sec { display: flex; flex-direction: column; gap: 12px; }
+  .sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
+  .sec-head h2 { font-size: 1.3rem; }
+  .hint { color: var(--muted); font-size: 0.95rem; }
+  .link-btn {
+    background: none; border: 0; padding: 2px 4px; color: var(--ink); font-weight: 700;
+    text-decoration: underline; text-underline-offset: 4px; cursor: pointer;
+  }
+
+  .chips { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .chip { position: relative; display: block; }
+  .chip input, .toggle input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .chip span {
+    display: grid; place-items: center; min-height: 56px; border: 2px solid var(--ink); border-radius: 14px;
+    background: var(--surface); font-family: var(--display); font-weight: 700; font-size: 1.6rem;
+    transition: transform 0.12s, background-color 0.12s;
+  }
+  .chip:hover span { transform: translateY(-2px); }
+  .chip input:checked + span { background: var(--accent); color: var(--on-accent); box-shadow: 3px 3px 0 var(--shadow); }
+  .chip input:focus-visible + span, .toggle input:focus-visible + .toggle-body { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+  .toggle { position: relative; display: block; }
+  .toggle-body {
+    display: flex; align-items: center; gap: 14px; border: 2px solid var(--ink); border-radius: 14px;
+    padding: 14px 16px; background: var(--surface); transition: background-color 0.12s;
+  }
+  .box {
+    flex: none; width: 28px; height: 28px; border: 2px solid var(--ink); border-radius: 8px;
+    display: grid; place-items: center; font-weight: 700; line-height: 1; background: var(--surface);
+  }
+  .toggle input:checked + .toggle-body { background: var(--accent); color: var(--on-accent); box-shadow: 3px 3px 0 var(--shadow); }
+  .toggle input:checked + .toggle-body .box { background: var(--on-accent); color: var(--accent); border-color: var(--on-accent); }
+  .toggle input:checked + .toggle-body .box::after { content: "✓"; }
+  .toggle-text { min-width: 0; display: flex; flex-direction: column; }
+  .toggle-text strong { font-family: var(--display); font-size: 1.15rem; }
+  .toggle-text .ex { align-self: flex-start; background: transparent; border-color: currentColor; margin-top: 2px; color: inherit; }
+
+  .summary { color: var(--muted); font-size: 0.98rem; min-height: 3.4em; }
+  .summary b { color: var(--ink); }
+
+  .big-btn {
+    width: 100%; min-height: 64px; border: 2px solid var(--ink); border-radius: 16px;
+    background: var(--accent); color: var(--on-accent); font-family: var(--display); font-weight: 700; font-size: 1.6rem;
+    box-shadow: 5px 5px 0 var(--shadow); cursor: pointer; transition: transform 0.12s, box-shadow 0.12s;
+  }
+  .big-btn:hover:not(:disabled) { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--shadow); }
+  .big-btn:active:not(:disabled) { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--shadow); }
+  .big-btn:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
+  .ghost-btn {
+    min-height: 52px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 14px; background: var(--surface);
+    font-family: var(--display); font-weight: 700; font-size: 1.15rem; cursor: pointer;
+  }
+  .ghost-btn:hover { background: var(--paper); }
+
+  /* Quiz */
+  .stack { display: flex; flex-direction: column; gap: 18px; }
+  .bar-wrap { display: flex; flex-direction: column; gap: 8px; }
+  .stats { display: flex; justify-content: space-between; gap: 12px; font-weight: 700; flex-wrap: wrap; }
+  .stats span { font-variant-numeric: tabular-nums; }
+  .track { height: 14px; border: 2px solid var(--ink); border-radius: 99px; background: var(--surface); overflow: hidden; }
+  .fill { height: 100%; width: 0; background: var(--accent); transition: width 0.3s; }
+  .eq {
+    direction: ltr; unicode-bidi: isolate; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+    gap: 0 0.35em; padding: 26px 12px; border: 2px solid var(--ink); border-radius: 18px; background: var(--surface);
+    box-shadow: 6px 6px 0 var(--shadow); font-family: var(--display); font-weight: 700;
+    font-size: clamp(2.6rem, 13vw, 4.4rem); line-height: 1.2; font-variant-numeric: tabular-nums;
+  }
+  .eq .x { color: var(--muted); }
+  .eq .q { color: var(--bad); }
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .opt {
+    position: relative; min-height: 84px; display: grid; place-items: center; padding: 8px 14px;
+    border: 2px solid var(--ink); border-radius: 16px; background: var(--surface); color: var(--ink);
+    font-family: var(--display); font-weight: 700; font-size: clamp(1.8rem, 8vw, 2.5rem); line-height: 1.2;
+    cursor: pointer; box-shadow: 4px 4px 0 var(--shadow); font-variant-numeric: tabular-nums;
+    transition: transform 0.12s, box-shadow 0.12s;
+  }
+  .opt .k {
+    position: absolute; top: 8px; inset-inline-start: 12px; font-family: var(--body); font-size: 0.95rem; color: var(--muted); font-weight: 700;
+  }
+  .opt:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 4px 7px 0 var(--shadow); }
+  .opt:disabled { cursor: default; color: var(--ink); }
+  .opt.is-right { background: var(--good-bg); border-color: var(--good); color: var(--ink); }
+  .opt.is-right::after { content: "✓"; position: absolute; top: 6px; inset-inline-end: 12px; font-size: 1.3rem; color: var(--good); }
+  .opt.is-wrong { background: var(--bad-bg); border-color: var(--bad); }
+  .opt.is-wrong::after { content: "✕"; position: absolute; top: 6px; inset-inline-end: 12px; font-size: 1.3rem; color: var(--bad); }
+  .opt.is-dim { opacity: 0.55; }
+  .feed { min-height: 2.2em; font-weight: 700; font-size: 1.15rem; text-align: center; }
+  .feed.good { color: var(--good); }
+  .feed.bad { color: var(--bad); }
+  .quiz-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+  .quiz-actions .big-btn { flex: 1 1 220px; width: auto; }
+  .next-slot { min-height: 64px; display: flex; }
+  .next-slot .big-btn[hidden] { display: none; }
+
+  /* Result */
+  .res { text-align: center; align-items: center; }
+  .res-score { font-family: var(--display); font-weight: 700; font-size: clamp(3.4rem, 17vw, 6rem); line-height: 1.1; direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
+  .res-score small { font-size: 0.4em; color: var(--muted); }
+  .res h2 { font-size: 1.6rem; }
+  .res-msg { color: var(--muted); font-size: 1.1rem; }
+  .mistakes { width: 100%; text-align: start; display: flex; flex-direction: column; gap: 10px; }
+  .mistakes h3 { font-size: 1.2rem; }
+  .mistakes ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; max-height: 340px; overflow-y: auto; }
+  .mistakes li {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 12px;
+    border: 2px solid var(--ink); border-radius: 12px; padding: 8px 14px; background: var(--paper);
+  }
+  .mistakes .eq-line { direction: ltr; unicode-bidi: isolate; font-family: var(--display); font-weight: 700; font-size: 1.3rem; }
+  .mistakes .picked { color: var(--bad); font-weight: 700; font-size: 0.95rem; }
+  .res-actions { display: flex; flex-wrap: wrap; gap: 12px; width: 100%; }
+  .res-actions .big-btn { flex: 1 1 220px; width: auto; }
+  .res-actions .ghost-btn { flex: 1 1 160px; }
+
+  footer { text-align: center; display: flex; flex-direction: column; gap: 2px; color: var(--muted); padding-top: 8px; }
+  footer .by { font-family: var(--display); font-weight: 700; font-size: 1.15rem; color: var(--ink); }
+  footer .dua { margin-top: 6px; color: var(--ink); font-weight: 500; }
+
+  @media (max-width: 420px) {
+    .panel { padding: 18px 14px; }
+    .chips { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .opts { gap: 10px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<div id="app" dir="rtl" lang="ar">
+  <header class="top">
+    <div class="ops" aria-hidden="true"><span>×</span><span>+</span><span>÷</span><span>−</span></div>
+    <p class="school">مدرسة هشام بن عروة الابتدائية</p>
     <h1>اختبر نفسك في جدول الضرب</h1>
     <p class="sub">اختر الإجابة الصحيحة</p>
+  </header>
 
-    <div class="note">
-      <div class="note-t">تذكّر:</div>
-      <div class="note-i">🔴 أي عدد تضربه في الصفر يكون الناتج صفراً</div>
-      <div class="note-i">🔴 أي عدد نضربه في الواحد لا يغيّر العدد المضروب (العنصر المحايد)</div>
-      <div class="note-i">🔴 الضرب في مضاعفات العشرة: نضع الأصفار في الإجابة ونضرب الأعداد المتبقية</div>
-    </div>
+  <section class="note" aria-labelledby="remember">
+    <h2 id="remember">تذكّر:</h2>
+    <ul>
+      <li><span class="dot" aria-hidden="true"></span><div><span>أي عدد تضربه في الصفر يكون الناتج صفراً</span><span class="ex">٩ × ٠ = ٠</span></div></li>
+      <li><span class="dot" aria-hidden="true"></span><div><span>أي عدد نضربه في الواحد لا يغيّر العدد المضروب (العنصر المحايد)</span><span class="ex">٨ × ١ = ٨</span></div></li>
+      <li><span class="dot" aria-hidden="true"></span><div><span>الضرب في مضاعفات العشرة: نضع الأصفار في الإجابة ونضرب الأعداد المتبقية</span><span class="ex">٣٠ × ٢٠ = ٦٠٠</span></div></li>
+    </ul>
+  </section>
 
-    <div class="label">القسم الأول: جدول الضرب (اختر جدولاً أو أكثر)</div>
-    <div class="chips c4" id="tchips"></div>
-    <div class="chips" style="margin-top:8px"><button class="chip wide" id="allT"></button></div>
+  <!-- Setup -->
+  <main>
+    <section id="setup" class="panel" aria-label="إعداد الاختبار">
+      <div class="sec">
+        <div class="sec-head">
+          <h2>القسم الأول: جدول الضرب</h2>
+          <button type="button" class="link-btn" id="allBtn">تحديد الكل</button>
+        </div>
+        <p class="hint">اختر جدولاً أو أكثر</p>
+        <div class="chips" id="chips" role="group" aria-label="اختيار الجداول"></div>
+      </div>
 
-    <div class="label">القسم الثاني: الضرب في ١٠ ومضاعفاتها</div>
-    <div class="chips"><button class="chip wide" id="tensChip">الضرب في ١٠ ومضاعفاتها (<span class="ltr">٦٠ × ٨٠</span>)</button></div>
+      <div class="sec">
+        <div class="sec-head"><h2>القسم الثاني: الضرب في ١٠ ومضاعفاتها</h2></div>
+        <label class="toggle">
+          <input type="checkbox" id="tens" checked>
+          <span class="toggle-body">
+            <span class="box" aria-hidden="true"></span>
+            <span class="toggle-text">
+              <strong>الضرب في ١٠ ومضاعفاتها</strong>
+              <span class="ex">٦٠ × ٨٠</span>
+            </span>
+          </span>
+        </label>
+      </div>
 
-    <div class="hint" id="hint"></div>
-    <button class="btn" id="go">ابدأ الاختبار</button>
-    <div class="credit">إعداد الأستاذ: محمد القرني<br>العام الدراسي ١٤٤٨هـ</div>
-  </div>
+      <p class="summary" id="summary" aria-live="polite"></p>
+      <button type="button" class="big-btn" id="startBtn">ابدأ الاختبار</button>
+    </section>
 
-  <div id="quiz" class="card hide">
-    <div class="top"><span id="num"></span><span id="sc"></span></div>
-    <div class="bar"><i id="fill"></i></div>
-    <div class="q" id="q"></div>
-    <div class="opts" id="opts"></div>
-    <div class="msg" id="msg"></div>
-    <button class="btn hide" id="next">التالي</button>
-  </div>
+    <!-- Quiz -->
+    <section id="quiz" class="stack" hidden aria-label="الاختبار">
+      <div class="bar-wrap">
+        <div class="stats"><span id="qCount"></span><span id="qScore"></span></div>
+        <div class="track"><div class="fill" id="bar"></div></div>
+      </div>
+      <div class="eq" id="eq" aria-live="polite"></div>
+      <div class="opts" id="opts" role="group" aria-label="الإجابات"></div>
+      <p class="feed" id="feed" aria-live="polite"></p>
+      <div class="quiz-actions">
+        <button type="button" class="ghost-btn" id="quitBtn">إنهاء الاختبار</button>
+        <button type="button" class="big-btn" id="nextBtn" hidden>السؤال التالي</button>
+      </div>
+    </section>
 
-  <div id="end" class="card hide">
-    <div class="big" id="emoji"></div>
-    <div class="score" id="final"></div>
-    <p class="sub" id="verdict"></p>
-    <div id="wrongBox" class="hide">
-      <div class="label">راجع هذه الأسئلة</div>
-      <ul class="wrong" id="wrongList"></ul>
-    </div>
-    <button class="btn" id="again">اختبار جديد</button>
-    <button class="btn ghost" id="home">تغيير الاختيار</button>
-  </div>
+    <section id="result" class="panel res" hidden aria-labelledby="resTitle">
+      <h2 id="resTitle" tabindex="-1">النتيجة</h2>
+      <div class="res-score" id="resScore"></div>
+      <p class="res-msg" id="resMsg"></p>
+      <div class="mistakes" id="mistakes" hidden>
+        <h3>راجع أخطاءك</h3>
+        <ul id="resList"></ul>
+      </div>
+      <div class="res-actions">
+        <button type="button" class="big-btn" id="retryBtn">أعد الاختبار</button>
+        <button type="button" class="ghost-btn" id="backBtn">غيّر الجداول</button>
+      </div>
+    </section>
+  </main>
 
-  <div class="dua">لا تنسونا من صالح دعواتكم</div>
-
+  <footer>
+    <p class="by">إعداد الأستاذ: محمد القرني</p>
+    <p>العام الدراسي ١٤٤٨هـ</p>
+    <p class="dua">لا تنسونا من صالح دعواتكم</p>
+  </footer>
 </div>
+
 <script>
-(function(){
-  var AR="٠١٢٣٤٥٦٧٨٩";
-  function ar(n){return String(n).replace(/\d/g,function(d){return AR[d]});}
-  var $=function(id){return document.getElementById(id)};
-  function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a}
-  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=rnd(0,i);var t=a[i];a[i]=a[j];a[j]=t}return a}
+/* ---- Pure logic ---- */
+const DIG = '٠١٢٣٤٥٦٧٨٩';
+const ar = n => String(n).replace(/\d/g, d => DIG[+d]);
+const rand = n => Math.floor(Math.random() * n);
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = rand(i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const strip = n => { let z = 0; while (n > 0 && n % 10 === 0) { n /= 10; z++; } return { s: n, z }; };
+const pairKey = p => p[0] + 'x' + p[1];
 
-  var sel={},tens=false,i;
-  for(i=2;i<=9;i++)sel[i]=true;
-  var TOTAL=0,qs,idx,score,wrongs,locked;
-
-  function countSel(){var c=0;for(var k=2;k<=9;k++)if(sel[k])c++;return c}
-
-  // ---------- شاشة الاختيار ----------
-  var tc=$("tchips");
-  for(i=2;i<=9;i++){(function(n){
-    var b=document.createElement("button");
-    b.className="chip";b.textContent=ar(n);b.dataset.n=n;
-    b.onclick=function(){sel[n]=!sel[n];refresh()};
-    tc.appendChild(b);
-  })(i)}
-  $("allT").onclick=function(){var all=countSel()===8;for(var k=2;k<=9;k++)sel[k]=!all;refresh()};
-  $("tensChip").onclick=function(){tens=!tens;refresh()};
-
-  function refresh(){
-    Array.prototype.forEach.call(tc.children,function(c){c.classList.toggle("on",!!sel[c.dataset.n])});
-    var c=countSel();
-    $("allT").textContent=c===8?"إلغاء تحديد كل الجداول":"تحديد كل الجداول (٢ إلى ٩)";
-    $("allT").classList.toggle("on",c===8);
-    $("tensChip").classList.toggle("on",tens);
-    var ok=c>0||tens;
-    $("go").disabled=!ok;
-    $("hint").textContent=ok?"":"اختر جدولاً واحداً على الأقل، أو الضرب في ١٠";
-  }
-  refresh();
-
-  // ---------- توليد الأسئلة ----------
-  function tablePool(){
-    var S=[],k;
-    for(k=2;k<=9;k++)if(sel[k])S.push(k);
-    var seen={},pool=[];
-    S.forEach(function(a){
-      for(var b=2;b<=9;b++){
-        [[a,b],[b,a]].forEach(function(p){
-          var key=p[0]+"x"+p[1];
-          if(seen[key])return;seen[key]=1;
-          var pr=p[0]*p[1];
-          pool.push({k:"d",a:p[0],b:p[1],p:pr,ans:pr});
-          if(Math.random()<0.5)pool.push({k:"m",a:p[0],b:p[1],p:pr,ans:p[1]});
-        });
-      }
-    });
-    return pool;
-  }
-
-  // اختيار بلا تكرار: كل حقيقة (مثل ٤×٧) تظهر مرة أولاً، ثم مرتين، ثم ثلاثاً عند الحاجة فقط
-  function pick(pool,n){
-    shuffle(pool);
-    var out=[],cnt={};
-    for(var pass=1;pass<=3&&out.length<n;pass++){
-      for(var j=0;j<pool.length&&out.length<n;j++){
-        var it=pool[j];if(it.u)continue;
-        var key=Math.min(it.a,it.b)+"x"+Math.max(it.a,it.b);
-        if((cnt[key]||0)<pass){cnt[key]=(cnt[key]||0)+1;it.u=1;out.push(it)}
-      }
+function tableQuestions(tables, count) {
+  const all = [];
+  tables.forEach(t => { for (let m = 0; m <= 10; m++) all.push([t, m]); });
+  const out = [];
+  let last = '';
+  while (out.length < count) {
+    const cycle = shuffle(all.slice());
+    for (const p of cycle) {
+      if (out.length >= count) break;
+      const k = pairKey(p);
+      if (k === last) continue;
+      last = k;
+      out.push(Math.random() < 0.5 ? { a: p[1], b: p[0], tens: false } : { a: p[0], b: p[1], tens: false });
     }
-    return out;
   }
+  return out;
+}
 
-  function tensList(n){
-    var out=[],seen={},g=0;
-    while(out.length<n&&g<4000){
-      g++;
-      var r=Math.random(),a,b;
-      if(r<0.2){a=rnd(2,9);b=Math.pow(10,rnd(1,2));}
-      else if(r<0.45){a=rnd(2,9);b=rnd(2,9)*Math.pow(10,rnd(1,2));}
-      else{a=rnd(2,9)*Math.pow(10,rnd(1,2));b=rnd(2,9)*Math.pow(10,rnd(1,2));}
-      if(Math.random()<0.5){var t=a;a=b;b=t}
-      var key=Math.min(a,b)+"x"+Math.max(a,b);
-      if(seen[key])continue;seen[key]=1;
-      out.push({k:"h",a:a,b:b,p:a*b,ans:a*b});
-    }
-    return out;
+function tensQuestions(count) {
+  const seen = new Set(), out = [];
+  let tries = 0;
+  while (out.length < count && tries++ < 3000) {
+    const r = rand(10);
+    let a, b;
+    if (r < 2) { a = 2 + rand(11); b = 10; }
+    else if (r < 6) { a = (2 + rand(8)) * 10; b = 2 + rand(8); }
+    else { a = (2 + rand(8)) * 10; b = (2 + rand(8)) * 10; }
+    if (Math.random() < 0.5) [a, b] = [b, a];
+    const k = Math.min(a, b) + 'x' + Math.max(a, b);
+    if (seen.has(k)) continue;
+    seen.add(k);
+    out.push({ a, b, tens: true });
   }
+  return out;
+}
 
-  // تدرّج: يبدأ بالأصغر ويكبر شيئاً فشيئاً مع خلط خفيف
-  function rank(l){
-    l.sort(function(x,y){return x.p-y.p});
-    l.forEach(function(q,i){q.o=i/(l.length-1||1)+(Math.random()-0.5)*0.2});
-    return l;
+function makeOptions(q) {
+  const { a, b, tens } = q, ans = a * b, c = new Set();
+  const add = v => { if (Number.isInteger(v) && (tens ? v > 0 : v >= 0) && v !== ans) c.add(v); };
+  if (tens) {
+    const A = strip(a), B = strip(b), z = A.z + B.z, p = 10 ** z;
+    add(A.s * B.s * p * 10);
+    if (z > 0) add(A.s * B.s * p / 10);
+    add((A.s + 1) * B.s * p); add((A.s - 1) * B.s * p);
+    add(A.s * (B.s + 1) * p); add(A.s * (B.s - 1) * p);
+    add(ans + p); add(ans - p);
+  } else {
+    [ans + a, ans - a, ans + b, ans - b, ans + 1, ans - 1, ans + 10, ans - 10, a + b].forEach(add);
+    add(a * (b + 1)); add(a * (b - 1)); add((a + 1) * b); add((a - 1) * b);
+    if (ans === 0) { add(a); add(b); add(1); add(10); }
   }
+  let k = 2;
+  while (c.size < 3) { add(ans + k * (tens ? 10 : 1)); k++; }
+  return shuffle([ans, ...shuffle([...c]).slice(0, 3)]);
+}
 
-  function build(){
-    var list=[];
-    if(countSel()>0)list=list.concat(rank(pick(tablePool(),40)));
-    if(tens)list=list.concat(rank(tensList(40)));
-    list.sort(function(x,y){return x.o-y.o});
-    return list;
+function buildQuiz(tables, withTens, total = 40) {
+  let qs;
+  if (tables.length && withTens) qs = [...tableQuestions(tables, total / 2), ...tensQuestions(total / 2)];
+  else if (tables.length) qs = tableQuestions(tables, total);
+  else qs = tensQuestions(total);
+  return shuffle(qs).map(q => ({ ...q, ans: q.a * q.b, opts: makeOptions(q) }));
+}
+/* ---- DOM ---- */
+document.documentElement.dir = 'rtl';
+document.documentElement.lang = 'ar';
+
+const $ = s => document.querySelector(s);
+const chipsBox = $('#chips'), tensBox = $('#tens'), optsBox = $('#opts');
+const feed = $('#feed'), nextBtn = $('#nextBtn');
+const views = { setup: $('#setup'), quiz: $('#quiz'), result: $('#result') };
+const LETTERS = ['أ', 'ب', 'ج', 'د'];
+const PRAISE = ['أحسنت!', 'ممتاز!', 'صحيح، استمر!', 'إجابة رائعة!'];
+const TOTAL = 40;
+let S = null;
+
+for (let t = 1; t <= 12; t++) {
+  const l = document.createElement('label');
+  l.className = 'chip';
+  l.innerHTML = `<input type="checkbox" value="${t}" aria-label="جدول ${ar(t)}"${[3, 4, 5].includes(t) ? ' checked' : ''}><span>${ar(t)}</span>`;
+  chipsBox.appendChild(l);
+}
+
+const tablesSel = () => [...chipsBox.querySelectorAll('input:checked')].map(i => +i.value);
+
+function refreshSummary() {
+  const t = tablesSel(), w = tensBox.checked, sum = $('#summary'), start = $('#startBtn');
+  if (!t.length && !w) {
+    sum.textContent = 'اختر جدولاً واحداً على الأقل أو القسم الثاني ليبدأ الاختبار.';
+    start.disabled = true;
+  } else {
+    const parts = [];
+    if (t.length) parts.push('جدول ' + t.map(ar).join('، '));
+    if (w) parts.push('الضرب في ١٠ ومضاعفاتها');
+    sum.innerHTML = `الاختبار من <b>${ar(TOTAL)} سؤالاً</b>: ${parts.join(' + ')}.`;
+    start.disabled = false;
   }
+  $('#allBtn').textContent = t.length === 12 ? 'إلغاء التحديد' : 'تحديد الكل';
+}
+chipsBox.addEventListener('change', refreshSummary);
+tensBox.addEventListener('change', refreshSummary);
+$('#allBtn').addEventListener('click', () => {
+  const boxes = [...chipsBox.querySelectorAll('input')];
+  const all = boxes.every(b => b.checked);
+  boxes.forEach(b => { b.checked = !all; });
+  refreshSummary();
+});
 
-  function options(q){
-    var ans=q.ans,set={},out=[ans],c,x;
-    set[ans]=1;
-    if(q.k==="h"){
-      var sa=q.a,sb=q.b,z=1;
-      while(sa%10===0){sa/=10;z*=10}
-      while(sb%10===0){sb/=10;z*=10}
-      c=[ans*10,ans/10,(sa+1)*sb*z,(sa-1)*sb*z,sa*(sb+1)*z,sa*(sb-1)*z,ans*100,ans/100];
-    }else if(q.k==="m"){
-      c=[ans+1,ans-1,ans+2,ans-2,ans+3,ans-3];
-    }else{
-      var a=q.a,b=q.b;
-      var sw=parseInt(String(ans).split("").reverse().join(""),10);
-      c=[(a+1)*b,(a-1)*b,a*(b+1),a*(b-1),sw,ans+10,ans-10,ans+1,ans-1];
-    }
-    shuffle(c);
-    for(var i=0;i<c.length&&out.length<4;i++){
-      x=c[i];
-      var okRange=q.k==="m"?(x>=2&&x<=10):(x>0);
-      if(Number.isInteger(x)&&okRange&&!set[x]){set[x]=1;out.push(x)}
-    }
-    var g=0;
-    while(out.length<4&&g<200){
-      g++;
-      x=q.k==="m"?rnd(2,10):(q.k==="h"?ans+rnd(-9,9)*Math.max(10,ans/10):ans+rnd(-12,12));
-      if(x>0&&!set[x]&&Number.isInteger(x)){set[x]=1;out.push(x)}
-    }
-    return shuffle(out);
+function show(name) {
+  Object.entries(views).forEach(([k, el]) => { el.hidden = k !== name; });
+  window.scrollTo(0, 0);
+}
+
+function startQuiz() {
+  S = { q: buildQuiz(tablesSel(), tensBox.checked, TOTAL), i: 0, score: 0, wrong: [], answered: false };
+  show('quiz');
+  showQuestion();
+}
+
+function updateStats() {
+  const n = S.q.length;
+  $('#qCount').textContent = `السؤال ${ar(S.i + 1)} من ${ar(n)}`;
+  $('#qScore').textContent = `الدرجة: ${ar(S.score)}`;
+  $('#bar').style.width = ((S.i + (S.answered ? 1 : 0)) / n * 100) + '%';
+}
+
+function showQuestion() {
+  const q = S.q[S.i];
+  S.answered = false;
+  updateStats();
+  $('#eq').innerHTML = `<span>${ar(q.a)}</span><span class="x">×</span><span>${ar(q.b)}</span><span class="x">=</span><span class="q">؟</span>`;
+  optsBox.innerHTML = '';
+  q.opts.forEach((v, idx) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'opt';
+    b.dataset.v = v;
+    b.innerHTML = `<span class="k">${LETTERS[idx]}</span>${ar(v)}`;
+    b.addEventListener('click', () => answer(b, v));
+    optsBox.appendChild(b);
+  });
+  feed.textContent = '';
+  feed.className = 'feed';
+  nextBtn.hidden = true;
+  nextBtn.textContent = S.i === S.q.length - 1 ? 'عرض النتيجة' : 'السؤال التالي';
+}
+
+function answer(btn, v) {
+  if (S.answered) return;
+  S.answered = true;
+  const q = S.q[S.i], ok = v === q.ans;
+  if (ok) S.score++; else S.wrong.push({ a: q.a, b: q.b, ans: q.ans, chosen: v });
+  [...optsBox.children].forEach(b => {
+    b.disabled = true;
+    if (+b.dataset.v === q.ans) b.classList.add('is-right');
+    else if (b === btn) b.classList.add('is-wrong');
+    else b.classList.add('is-dim');
+  });
+  if (ok) {
+    feed.className = 'feed good';
+    feed.textContent = PRAISE[rand(PRAISE.length)];
+  } else {
+    feed.className = 'feed bad';
+    feed.innerHTML = `الإجابة الصحيحة: <span dir="ltr" style="unicode-bidi:isolate">${ar(q.a)} × ${ar(q.b)} = ${ar(q.ans)}</span>`;
   }
+  updateStats();
+  nextBtn.hidden = false;
+  nextBtn.focus();
+}
 
-  // ---------- سير الاختبار ----------
-  function show(id){["start","quiz","end"].forEach(function(s){$(s).classList.toggle("hide",s!==id)});window.scrollTo(0,0)}
+function showResult() {
+  const n = S.q.length, r = S.score / n;
+  show('result');
+  $('#resScore').innerHTML = `${ar(S.score)}<small> / ${ar(n)}</small>`;
+  $('#resMsg').textContent =
+    r >= 0.9 ? 'ممتاز! أنت بطل جدول الضرب.' :
+    r >= 0.7 ? 'رائع جداً! قليل من التدريب وتصل إلى الدرجة الكاملة.' :
+    r >= 0.5 ? 'جيد، واصل التدريب وراجع الجداول التي أخطأت فيها.' :
+    'لا بأس، راجع الجداول وحاول مرة أخرى وستتحسن نتيجتك.';
+  const list = $('#resList');
+  list.innerHTML = '';
+  S.wrong.forEach(w => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="eq-line">${ar(w.a)} × ${ar(w.b)} = ${ar(w.ans)}</span><span class="picked">اخترت ${ar(w.chosen)}</span>`;
+    list.appendChild(li);
+  });
+  $('#mistakes').hidden = S.wrong.length === 0;
+  $('#resTitle').focus();
+}
 
-  function start(){
-    qs=build();TOTAL=qs.length;idx=0;score=0;wrongs=[];
-    show("quiz");render();
-  }
+nextBtn.addEventListener('click', () => {
+  S.i++;
+  if (S.i >= S.q.length) showResult(); else showQuestion();
+});
+$('#startBtn').addEventListener('click', startQuiz);
+$('#retryBtn').addEventListener('click', startQuiz);
+$('#backBtn').addEventListener('click', () => show('setup'));
+$('#quitBtn').addEventListener('click', () => show('setup'));
 
-  function qText(q){
-    return q.k==="m"?ar(q.a)+" × ? = "+ar(q.p):ar(q.a)+" × "+ar(q.b)+" = ?";
-  }
+document.addEventListener('keydown', e => {
+  if (views.quiz.hidden || !S || S.answered) return;
+  const n = '1234'.indexOf(e.key), m = '١٢٣٤'.indexOf(e.key);
+  const idx = n >= 0 ? n : m;
+  if (idx >= 0 && optsBox.children[idx]) optsBox.children[idx].click();
+});
 
-  function render(){
-    locked=false;
-    var q=qs[idx];
-    $("num").textContent="السؤال "+ar(idx+1)+" من "+ar(TOTAL);
-    $("sc").textContent="الدرجة: "+ar(score);
-    $("fill").style.width=(idx/TOTAL*100)+"%";
-    var t=qText(q);
-    $("q").textContent=t;
-    $("q").style.fontSize=t.length>13?"32px":t.length>10?"40px":"52px";
-    $("msg").textContent="";
-    $("next").classList.add("hide");
-    var box=$("opts");box.innerHTML="";
-    options(q).forEach(function(v){
-      var b=document.createElement("button");
-      b.className="opt";b.textContent=ar(v);b.dataset.v=v;
-      b.onclick=function(){pickAns(b,v)};
-      box.appendChild(b);
-    });
-  }
-
-  function pickAns(btn,v){
-    if(locked)return;locked=true;
-    var q=qs[idx];
-    var all=$("opts").children;
-    if(v===q.ans){
-      score++;btn.classList.add("ok");
-      $("msg").textContent="أحسنت! إجابة صحيحة 🎉";
-      $("msg").style.color="var(--ok)";
-    }else{
-      btn.classList.add("bad");
-      Array.prototype.forEach.call(all,function(o){if(parseInt(o.dataset.v,10)===q.ans)o.classList.add("ok")});
-      $("msg").textContent="الجواب الصحيح: "+ar(q.ans);
-      $("msg").style.color="var(--bad)";
-      wrongs.push(q);
-    }
-    $("sc").textContent="الدرجة: "+ar(score);
-    $("fill").style.width=((idx+1)/TOTAL*100)+"%";
-    $("next").textContent=idx===TOTAL-1?"عرض النتيجة":"التالي";
-    $("next").classList.remove("hide");
-  }
-
-  function finish(){
-    show("end");
-    $("final").textContent=ar(score)+" من "+ar(TOTAL);
-    var e,v,pct=score/TOTAL;
-    if(score===TOTAL){e="🏆";v="ممتاز! درجة كاملة، أنت بطل الضرب!"}
-    else if(pct>=0.8){e="🌟";v="رائع جداً! استمر هكذا."}
-    else if(pct>=0.6){e="👍";v="جيد! قليل من التدريب وتصبح ممتازاً."}
-    else{e="💪";v="لا بأس، حاول مرة أخرى وراجع الجدول."}
-    $("emoji").textContent=e;$("verdict").textContent=v;
-    var list=$("wrongList");list.innerHTML="";
-    wrongs.forEach(function(q){
-      var li=document.createElement("li");
-      var l=document.createElement("b");l.textContent=ar(q.a)+" × "+ar(q.b);
-      var r=document.createElement("span");r.textContent="= "+ar(q.p);
-      li.appendChild(l);li.appendChild(r);list.appendChild(li);
-    });
-    $("wrongBox").classList.toggle("hide",wrongs.length===0);
-  }
-
-  $("go").onclick=start;
-  $("again").onclick=start;
-  $("home").onclick=function(){show("start")};
-  $("next").onclick=function(){idx++;if(idx>=TOTAL)finish();else render()};
-})();
+refreshSummary();
 </script>
+
 </body>
 </html>
+
+</body></html>
