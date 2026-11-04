@@ -340,7 +340,7 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
     return '<span class="eq">'+tokens.map(function(t){return '<span class="tk">'+t+'</span>'}).join("")+'</span>';
   }
   function qTokens(q){
-    return q.k==="m"?[ar(q.a),"×","؟","=",ar(q.p)]:[ar(q.a),"×",ar(q.b),"=","؟"];
+    return q.k==="m"?[ar(q.p),"=",ar(q.a),"×","؟"]:[ar(q.a),"×",ar(q.b),"=","؟"];
   }
 
   function render(){
