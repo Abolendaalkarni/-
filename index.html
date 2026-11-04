@@ -88,6 +88,7 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
 .note-s{font-size:14px;color:var(--muted);margin-top:8px;text-align:center;min-height:20px}
 .tm{font-weight:800}
 .tm.low{color:var(--bad)}
+.btn.sm{padding:10px;font-size:16px;margin-top:12px}
 .hide{display:none}
 </style>
 </head>
@@ -136,6 +137,7 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
     <div class="opts" id="opts"></div>
     <div class="msg" id="msg"></div>
     <button class="btn hide" id="next">التالي</button>
+    <button class="btn ghost sm" id="quit">الرجوع إلى البداية</button>
   </div>
 
   <div id="end" class="card hide">
@@ -165,8 +167,8 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
   for(i=2;i<=9;i++)sel[i]=true;
   var TOTAL=0,qs,idx,score,wrongs,locked;
   var CNT=20,LV="m",TM=0,timerId=null,left=0;
-  var LR={e:[2,5],m:[2,9],h:[6,12]},MP={e:0.25,m:0.5,h:0.8};
-  var LVTXT={e:"سهل: الضرب في ٢ إلى ٥ فقط",m:"متوسط: الضرب في ٢ إلى ٩ مع أسئلة الرقم المجهول",h:"صعب: الضرب في ٦ إلى ١٢ وأسئلة الرقم المجهول أكثر"};
+  var LR={e:[2,5],m:[2,9],h:[6,9]},MP={e:0.25,m:0.5,h:0.8};
+  var LVTXT={e:"سهل: الضرب في ٢ إلى ٥ فقط",m:"متوسط: الضرب في ٢ إلى ٩ مع أسئلة الرقم المجهول",h:"صعب: الضرب في ٦ إلى ٩ وأسئلة الرقم المجهول أكثر"};
 
   function countSel(){var c=0;for(var k=2;k<=9;k++)if(sel[k])c++;return c}
 
@@ -332,6 +334,7 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
   }
 
   function start(){
+    resetQuit();
     qs=build();TOTAL=qs.length;idx=0;score=0;wrongs=[];
     show("quiz");render();
   }
@@ -405,6 +408,13 @@ p.sub{color:var(--muted);text-align:center;margin:0 0 18px}
     $("wrongBox").classList.toggle("hide",wrongs.length===0);
   }
 
+  var qt=null;
+  function resetQuit(){if(qt){clearTimeout(qt);qt=null}$("quit").textContent="الرجوع إلى البداية"}
+  $("quit").onclick=function(){
+    if(qt){resetQuit();stopTimer();show("start");return}
+    $("quit").textContent="اضغط مرة ثانية للتأكيد";
+    qt=setTimeout(resetQuit,3000);
+  };
   $("go").onclick=start;
   $("again").onclick=start;
   $("home").onclick=function(){stopTimer();show("start")};
